@@ -1,4 +1,4 @@
-rule Atomic_Stealer_Generic {
+rule Atomic_Stealer_B {
     meta:
         author = "security-penguin"
         description = "Detects Atomic Stealer targeting MacOS"
@@ -6,11 +6,19 @@ rule Atomic_Stealer_Generic {
         reference1 = "https://www.malwarebytes.com/blog/threat-intelligence/2024/01/atomic-stealer-rings-in-the-new-year-with-updated-version/amp"
 	    reference2 = "https://www.bleepingcomputer.com/news/security/macos-info-stealers-quickly-evolve-to-evade-xprotect-detection/"
 	    reference3 = "https://github.com/RussianPanda95/Yara-Rules/blob/main/AtomicStealer/Atomic_Stealer.yar"
-        triage_description = "Atomic Stealer, variant A."
+        triage_description = "Atomic Stealer, variant B."
+        triage_score = 10
+		category = "MALWARE"
+		status = "TESTING"
+		sharing = "TLP:CLEAR"
+		malware_type = "INFOSTEALER"
+		mitre_att = "T1204.002"
+		actor_type = "CRIMEWARE"
+		source = "secuirty-penguin"
     strings:
         $s1 = "osascript -e '"
-	$t2 = "12supermegahuxPKc"
-	$t1 = "6xerynav"
+		$s2 = "12supermegahuxPKc"
+		$s3 = "UUUW"
     condition:	
 		(
 		uint32(0) == 0xfeedface or // Mach-O MH_MAGIC
@@ -20,6 +28,6 @@ rule Atomic_Stealer_Generic {
 		uint32(0) == 0xcafebabe or // Mach-O FAT_MAGIC
 		uint32(0) == 0xbebafeca    // Mach-O FAT_CIGAM
 		)
-        and all of ($s*) and 1 of ($t*)
+        and all of ($s*)
 
 }
