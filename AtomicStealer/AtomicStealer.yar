@@ -1,6 +1,6 @@
-
 rule Atomic_Stealer_Generic {
     meta:
+		version = "1.0"
         author = "security-penguin"
         description = "Detects Atomic Stealer targeting MacOS"
         date = "2024-04-014"
@@ -10,12 +10,12 @@ rule Atomic_Stealer_Generic {
     	triage_description = "Atomic Stealer Generic finding."
         triage_score = 10		
 		category = "MALWARE"
-		status = "TESTING"
+		status = "RELEASED"
 		sharing = "TLP:CLEAR"
 		malware_type = "INFOSTEALER"
 		mitre_att = "T1204.002"
 		actor_type = "CRIMEWARE"
-		source = "secuirty-penguin"
+		source = "security-penguin"
     strings:
         $s1 = "osascript -e '"
 		$t2 = "12supermegahuxPKc"

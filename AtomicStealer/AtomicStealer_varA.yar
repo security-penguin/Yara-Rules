@@ -10,12 +10,12 @@ rule Atomic_Stealer_A {
         triage_description = "Atomic Stealer, variant A."
         triage_score = 10
 		category = "MALWARE"
-		status = "TESTING"
+		status = "RELEASED"
 		sharing = "TLP:CLEAR"
 		malware_type = "INFOSTEALER"
 		mitre_att = "T1204.002"
 		actor_type = "CRIMEWARE"
-		source = "secuirty-penguin"
+		source = "security-penguin"
     strings:
         $s1 = "osascript -e '"
 		$s2 = "6xerynav"
