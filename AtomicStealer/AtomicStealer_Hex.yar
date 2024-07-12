@@ -19,6 +19,6 @@ rule Atomic_Stealer_Hex {
     strings:
 		$hex1 = {6f 73 61 73 63 72 69 70 74 20 2d 65 20 27}
     condition:	
-        1 of ($t*)
+        1 of ($hex*)
 
 }
