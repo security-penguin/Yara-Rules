@@ -17,7 +17,8 @@ rule Atomic_Stealer_Hex {
 		actor_type = "CRIMEWARE"
 		source = "security-penguin"
     strings:
-		$hex1 = {6f 73 61 73 63 72 69 70 74 20 2d 65 20 27}
+		$hex1 = {36 66 37 33}
+		$hex2 = {36 31 37 33}
     condition:	
         1 of ($hex*)
 
