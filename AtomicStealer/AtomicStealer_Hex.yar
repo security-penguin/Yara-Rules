@@ -7,7 +7,7 @@ rule Atomic_Stealer_Hex {
         reference1 = "https://www.malwarebytes.com/blog/threat-intelligence/2024/01/atomic-stealer-rings-in-the-new-year-with-updated-version/amp"
 	    reference2 = "https://www.bleepingcomputer.com/news/security/macos-info-stealers-quickly-evolve-to-evade-xprotect-detection/"
 	    reference3 = "https://github.com/RussianPanda95/Yara-Rules/blob/main/AtomicStealer/Atomic_Stealer.yar"
-    	triage_description = "Atomic Stealer Generic finding."
+    	triage_description = "Atomic Stealer Hex."
         triage_score = 10		
 		category = "MALWARE"
 		status = "RELEASED"
